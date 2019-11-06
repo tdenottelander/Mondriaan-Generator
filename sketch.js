@@ -5,7 +5,6 @@ var mondriaan;
 var funky = false;
 
 function setup(){
-    // desiredWidth = 500
     resetColors()
     mondriaan = new Mondriaan()
     windowResized()

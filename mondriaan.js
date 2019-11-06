@@ -17,8 +17,6 @@ var counter = 0
 var allSegments = []
 
 class Mondriaan {
-    segment;
-
     constructor(){
         // Math.seedrandom("1234")
         this.reset()
@@ -119,8 +117,8 @@ class Segment{
 
     drawRecursive(){
         if(this.split > 0){
-            this.segments[0].draw()
-            this.segments[1].draw()
+            this.segments[0].drawRecursive()
+            this.segments[1].drawRecursive()
         } else {
             this.draw()
         }
@@ -128,14 +126,12 @@ class Segment{
 
     draw(){
         fill(this.color)
-        // rect(this.coords[0].x, this.coords[0].y, this.width, this.height)
         quad(
             this.coords[0].x * width, this.coords[0].y * height, 
             this.coords[1].x * width, this.coords[1].y * height, 
             this.coords[2].x * width, this.coords[2].y * height, 
             this.coords[3].x * width, this.coords[3].y * height
             )
-        // rect(this.coords[0].x, this.coords[1], this.coords[2] - this.coords[0], this.coords[3] - this.coords[1])
     }
 
     getNewCoords(coords, splittype){
