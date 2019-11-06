@@ -28,19 +28,37 @@
         #signature > a:hover {
             color: rgb(133, 133, 133);
         }
+
+        button {
+            border: 0.2em solid black;
+            background-color: white;
+            padding: 0.5em
+        }
+
+        #makeFunky{
+            background-color: rgb(255, 217, 0);
+        }
+
+        #makeFunky:hover{
+            background-color: rgb(40, 103, 197);
+        }
+
+        #resetColors:hover{
+            background-color: rgb(202, 30, 30);
+        }
     </style>
 </head>
 
 <body>
-    <h1>Mondriaan Generator</h1>
-    <p id="signature">Made by <a href="https://tomdenottelander.com">Tom den Ottelander</a></p>
+    <!-- <h1>Mondriaan Generator</h1>
+    <p id="signature">Made by <a href="https://tomdenottelander.com">Tom den Ottelander</a></p> -->
 
     <div id="CanvasHolder"></div>
 
-    <button onclick="resetColors()">Original colors</button>
-    <button onclick="makeFunky()">Make funky</button>
+    <button onclick="resetColors()" id="resetColors">Original colors</button>
+    <button onclick="makeFunky()" id="makeFunky">Make funky</button>
 
-    <div id="description">
+    <!-- <div id="description">
         <h3>Description</h3>
         <p> Description here
         </p>
@@ -49,7 +67,7 @@
         <ul>
         <li><a href="#" target="_blank">References here</a></li>
         </ul>
-    </div>
+    </div> -->
 
     <!-- <p id="framerate">-fps</p> -->
 </body>

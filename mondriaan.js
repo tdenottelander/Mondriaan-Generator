@@ -3,8 +3,8 @@ var baseColor
 var minMaxLevel = 3
 var maxMaxLevel = 5
 var maxLevel
-var minSize = 400
-var maxSize = 490
+var minSize = 0.8
+var maxSize = 0.98
 var minSegmentOffset = 0.4
 var minSplitChance = 0.2
 var maxSplitChance = 0.8
@@ -19,10 +19,8 @@ var allSegments = []
 class Mondriaan {
     segment;
 
-    constructor(width, height){
+    constructor(){
         // Math.seedrandom("1234")
-        this.width = width
-        this.height = height
         this.reset()
     }
 
@@ -43,6 +41,7 @@ class Mondriaan {
         id = 0
         allSegments = []
         this.strokeWeight = minStrokeWeight + Math.random() * (maxStrokeWeight - minStrokeWeight)
+        this.strokeWeight *= (width / desiredWidth)
         this.generate()
     }
 
@@ -52,8 +51,9 @@ class Mondriaan {
 
         let newWidth = minSize + (maxSize - minSize) * Math.random()
         let newHeight = minSize + (maxSize - minSize) * Math.random()
-        let x0 = (this.width - newWidth) * 0.5
-        let y0 = (this.height - newHeight) * 0.5
+
+        let x0 = (1 - newWidth) * 0.5
+        let y0 = (1 - newHeight) * 0.5
 
         let x1 = x0 + newWidth
         let y1 = y0
@@ -130,10 +130,10 @@ class Segment{
         fill(this.color)
         // rect(this.coords[0].x, this.coords[0].y, this.width, this.height)
         quad(
-            this.coords[0].x, this.coords[0].y, 
-            this.coords[1].x, this.coords[1].y, 
-            this.coords[2].x, this.coords[2].y, 
-            this.coords[3].x, this.coords[3].y
+            this.coords[0].x * width, this.coords[0].y * height, 
+            this.coords[1].x * width, this.coords[1].y * height, 
+            this.coords[2].x * width, this.coords[2].y * height, 
+            this.coords[3].x * width, this.coords[3].y * height
             )
         // rect(this.coords[0].x, this.coords[1], this.coords[2] - this.coords[0], this.coords[3] - this.coords[1])
     }
