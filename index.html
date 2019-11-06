@@ -1,0 +1,55 @@
+<head>
+    <title>Mondriaan Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="sketch.js"></script>
+    <script src="mondriaan.js"></script>
+    <script src="seedrandom.js"></script>
+    
+
+    <style>
+        body {
+            text-align: center;
+            font: 1em roboto, sans-serif;
+        }
+
+        #signature {
+            color: rgb(71, 71, 71);
+            font-size: 0.7em;
+        }
+
+        #signature > a:visited, a:link {
+            color: rgb(104, 104, 104);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #signature > a:hover {
+            color: rgb(133, 133, 133);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mondriaan Generator</h1>
+    <p id="signature">Made by <a href="https://tomdenottelander.com">Tom den Ottelander</a></p>
+
+    <div id="CanvasHolder"></div>
+
+    <button onclick="resetColors()">Original colors</button>
+    <button onclick="makeFunky()">Make funky</button>
+
+    <div id="description">
+        <h3>Description</h3>
+        <p> Description here
+        </p>
+
+        <h3>References</h3>
+        <ul>
+        <li><a href="#" target="_blank">References here</a></li>
+        </ul>
+    </div>
+
+    <!-- <p id="framerate">-fps</p> -->
+</body>
