@@ -46,7 +46,6 @@ function windowResized(){
         height = desiredWidth
         setupCanvas()
     }
-    console.log("newWidth = " + width)
 }
 
 function setupCanvas(){
