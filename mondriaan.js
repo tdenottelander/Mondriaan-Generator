@@ -5,15 +5,16 @@ var maxMaxLevel = 5
 var maxLevel
 var minSize = 0.8
 var maxSize = 0.98
-var minSegmentOffset = 0.4
+var minSegmentOffset = 0.25
 var minSplitChance = 0.2
-var maxSplitChance = 0.8
+var maxSplitChance = 0.6
 var minStrokeWeight = 2
 var maxStrokeWeight = 8
-var funkyDiagonalSplitChance = 0.3
-var maxRatio = 1.8
+var funkyDiagonalSplitChance = 0.4
+var maxRatio = 1.5
 var id = 0
 var counter = 0
+var framesBeforeNext = 50
 var allSegments = []
 
 class Mondriaan {
@@ -29,7 +30,7 @@ class Mondriaan {
             allSegments[counter].draw()
         }
         counter++
-        if(counter > allSegments.length + 20){
+        if(counter > allSegments.length + framesBeforeNext){
             this.reset()
         }
     }
@@ -109,8 +110,8 @@ class Segment{
     }
 
     isCorrectLengthWidthRatio(){
-        let width = this.coords[2] - this.coords[0]
-        let height = this.coords[3] - this.coords[1]
+        let width = this.coords[1].x - this.coords[0].x
+        let height = this.coords[2].y - this.coords[0].y
         let ratio = Math.max(width/height, height/width)
         return ratio < maxRatio
     }
