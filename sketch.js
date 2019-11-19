@@ -25,7 +25,7 @@ function makeFunky(){
     color3 = [Math.random() * 360, hsbS, hsbB]
     color4 = [Math.random() * 360, hsbS, hsbB]
     color5 = [Math.random() * 360, hsbS, hsbB]
-    baseColor = [Math.random() * 360, Math.random() * 10, Math.random() * 40 + 60]
+    baseColor = [Math.random() * 360, Math.random() * 5, Math.random() * 10 + 90]
     colors = [color1, color2, color3, color4, color5, baseColor, baseColor, baseColor, baseColor]
 }
 
